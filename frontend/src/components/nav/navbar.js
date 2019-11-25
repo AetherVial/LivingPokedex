@@ -18,7 +18,6 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <Link to={'/profile'}>Profile</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             );
@@ -33,10 +32,14 @@ class NavBar extends React.Component {
     }
     render() {
         return (
-            <div>
-                <h1>Chirper</h1>
-                { this.getLinks() }
+            <React.Fragment>
+            <div className="NavBar">
+                <h1>Pokedex Tracker</h1>
             </div>
+            <div className="NavBar">
+                {this.getLinks()}
+            </div>
+            </React.Fragment>
         );
     }
 }

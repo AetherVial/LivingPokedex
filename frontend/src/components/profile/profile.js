@@ -1,33 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
-class Profile extends React.Component {
-    constructor(props) {
-        super(props);
+const Profile = () => {
+    const [currentUser, setCurrentUser] = useState({});
 
-        // this.state = {
-        //     tweets: []
-        // }
-    }
+    useEffect(() => {
+        axios.get('/api/users/current')
+            .then(res => setCurrentUser(res.data))
+    }, [])
 
-    // componentWillMount() {
-    //     console.log(this.props.currentUser.id)
-    // }
-
-    // componentWillReceiveProps(newState) {
-
-    // }
-
-    render() {
-        // if (this.state.tweets.length === 0) {
-        //     return (<div>This user has no Tweets</div>)
-        // } else {
-            return (
-                <div>
-                    <h2>profile</h2>
-                </div>
-            );
-        }
-  //  }
+   
+    if (currentUser) {
+        return (
+            <div>
+                <h2>Welcome {currentUser.handle}</h2>
+            </div>
+        );
+    } else {
+        return (
+            <div>   
+            </div>
+        )
+    }    
 }
 
 export default Profile;

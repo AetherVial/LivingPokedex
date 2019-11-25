@@ -1,0 +1,9 @@
+.LoginForm {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.LoginForm > form > input:focus {
+  outline: none;
+}

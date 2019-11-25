@@ -22,16 +22,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    const user = new User({
-        hadnle: 'jim', 
-        email: 'jim@jim.jim', 
-        password: 'jimisgreat123'
-    })
-    user.save()
-    res.send("Hello World!");
-});
-
 app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
