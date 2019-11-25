@@ -27,7 +27,8 @@ router.get(
         res.json({
             id: req.user.id, 
             handle: req.user.handle, 
-            email: req.user.email
+            email: req.user.email,
+            pokemon: req.user.pokemon
         });
     })
 
