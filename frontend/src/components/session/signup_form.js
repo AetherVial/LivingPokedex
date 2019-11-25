@@ -58,20 +58,18 @@ class SignupForm extends React.Component {
 
     render() {
         return(
-            <div className="login-form-container">
+            <div className="LoginForm">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
-                        <br/>
+                        <input type="text"
+                            value={this.state.handle}
+                            onChange={this.update('handle')}
+                            placeholder="Username"
+                        />
+                        <br />
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
-                        />
-                        <br/>
-                        <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            placeholder="Handle"
                         />
                         <br/>
                         <input type="password"
@@ -88,7 +86,6 @@ class SignupForm extends React.Component {
                         <br/>
                         <input type="submit" value="Submit"/>
                         {this.renderErrors()}
-                    </div>
                 </form>
             </div>
         );
