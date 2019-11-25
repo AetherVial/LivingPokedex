@@ -3,12 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
-const tweets = require("./routes/api/tweets");
-// const User = require("./models/User");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-
-//mongodb+srv://admin:RYkm1vDcUAv8WLRU@mern-eansw.mongodb.net/test?retryWrites=true&w=majority
 
 mongoose 
     .connect(db, { userNewUrlParser: true })
@@ -37,7 +33,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", users);
-app.use("/api/tweets", tweets);
 
 const port = process.env.PORT || 5000;
 

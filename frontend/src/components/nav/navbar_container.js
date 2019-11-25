@@ -11,5 +11,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { logout }
-    // { logout: (dispatch) => dispatch(logout()) }
 )(NavBar);
